@@ -1,0 +1,11 @@
+{
+  "Name": "Firefly Shader 萤火虫光影",
+  "Version": "1.0",
+  "ApiVersion": "1.80",
+  "Description": "Only Add fireflies to the game. 真的只给游戏添加萤火虫的光影",
+  "ScVersion": "2.4.0.0",
+  "Link": "https://github.com/XiaofengdiZhu/FireflyShader",
+  "Author": "销锋镝铸 XiaofengdiZhu",
+  "PackageName": "xfdz.FireflyShader",
+  "Dependencies": []
+}

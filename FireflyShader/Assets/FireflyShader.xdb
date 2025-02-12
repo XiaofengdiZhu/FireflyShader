@@ -1,0 +1,7 @@
+﻿<Mod>
+	<ProjectTemplate Name="Project" Guid="85023bf8-1c90-4dd1-9442-e6c13691d078">
+		<MemberSubsystemTemplate Name="FireflyShader" Guid="0e7a8df4-5308-4048-9034-561ed56c80b2" InheritanceParent="a3914c13-7801-46a6-b23a-9e2b36e9defb">
+			<Parameter Name="Class" Guid="a6f7cd46-5e36-48fa-9bd9-639317465f6f" Value="Game.SubsystemFireflyShader" Type="string"/>
+		</MemberSubsystemTemplate>
+	</ProjectTemplate>
+</Mod>

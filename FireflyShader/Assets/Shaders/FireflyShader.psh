@@ -1,0 +1,18 @@
+#version 320 es
+
+precision highp float;
+
+in vec3 u_position;
+in vec4 u_color;
+
+uniform float u_attenuation;
+
+out vec4 fragColor;
+
+void main()
+{
+    vec2 coord = gl_PointCoord * 2.0 - 1.0;
+    float attenuation = exp(-u_attenuation * (coord.x * coord.x + coord.y * coord.y));
+    if (attenuation < 0.05)discard;
+    fragColor = u_color * attenuation;
+}

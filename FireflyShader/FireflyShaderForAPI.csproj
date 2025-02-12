@@ -1,0 +1,74 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<OutputType>Library</OutputType>
+		<RootNamespace>Game</RootNamespace>
+		<TargetFramework>net9.0</TargetFramework>
+		<AssemblyName>FireflyShader</AssemblyName>
+		<Deterministic>true</Deterministic>
+		<LangVersion>preview</LangVersion>
+		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<GenerateDependencyFile>false</GenerateDependencyFile>
+		<ErrorReport>prompt</ErrorReport>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+		<DebugType>pdbonly</DebugType>
+		<OutputPath>bin\Debug\</OutputPath>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+		<DebugType>none</DebugType>
+		<OutputPath>bin\Release\</OutputPath>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Silk.NET.OpenGLES" Version="2.22.0"/>
+		<PackageReference Include="SixLabors.ImageSharp" Version="3.1.6"/>
+	</ItemGroup>
+	<ItemGroup>
+		<Reference Include="Engine">
+			<HintPath>reference\Engine.dll</HintPath>
+		</Reference>
+		<Reference Include="EntitySystem">
+			<HintPath>reference\EntitySystem.dll</HintPath>
+		</Reference>
+		<Reference Include="Survivalcraft">
+			<HintPath>reference\Survivalcraft.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+	<ItemGroup>
+		<None Update="modinfo.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\FireflyShader.xdb">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\Lang\en-US.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\Lang\zh-CN.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\Shaders\FireflyShader.csh">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\Shaders\FireflyShader.psh">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Assets\Shaders\FireflyShader.vsh">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="FireflyShaderFlatBatch2D.cs"/>
+		<Compile Include="FireflyShaderShader.cs"/>
+		<Compile Include="SubsystemFireflyShader.cs"/>
+		<Compile Include="VertexBuffers.cs"/>
+		<Compile Include="VertexElementExtended.cs"/>
+		<Compile Include="VertexFirefly.cs"/>
+	</ItemGroup>
+	<ItemGroup>
+		<Folder Include="reference\"/>
+	</ItemGroup>
+</Project>
